@@ -31,7 +31,7 @@ jobs:
 
       # Compila as classes Java
       - name: Compilar
-        run: javac Main.java 
+        run: javac Calculadora.java 
 
       # Executa o programa
       - name: Executar
