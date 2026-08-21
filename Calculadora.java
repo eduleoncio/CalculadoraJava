@@ -1,4 +1,4 @@
-public class CalculadoraPipeline {
+public class Calculadora {
     public static void main(String[] args) {
         if (args.length < 3) {
             System.out.println("Uso: java CalculadoraPipeline <num1> <operador> <num2>");
