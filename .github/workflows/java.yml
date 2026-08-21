@@ -1,0 +1,38 @@
+# Nome da pipeline
+name: Pipeline Calculadora Java - TA
+
+# Quando a pipeline será executada
+# Executa em qualquer push, independentemente da branch
+on:
+  push:
+
+# Trabalhos que serão executados
+jobs:
+
+  # Nome do trabalho
+  executar-java:
+
+    # Sistema operacional utilizado
+    runs-on: ubuntu-latest
+
+    # Etapas do trabalho
+    steps:
+
+      # Baixa o código do repositório
+      - name: Baixar código
+        uses: actions/checkout@v5
+
+      # Configura o Java 21
+      - name: Configurar Java 21
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      # Compila as classes Java
+      - name: Compilar
+        run: javac Calculadora.java 
+
+      # Executa o programa
+      - name: Executar
+        run: java Main
